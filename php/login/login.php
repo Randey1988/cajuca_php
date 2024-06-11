@@ -59,12 +59,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     // Se recopila la información del usuario
                     $_SESSION['inicio'] = true;
                     
-                    echo '<h2><a href = "../../home.php" title="Home">LOGIN CORRECTO. Pinche aquí si no se le redirecciona correctamente</a></h2>';
-                    header("Location: ../../home.php" );    //Esto hace que se vuelva a la página inicial.
+                    echo '<h2><a href = "../../home.php?login='$usuario'" title="Home">LOGIN CORRECTO. Pinche aquí si no se le redirecciona correctamente</a></h2>';
+                    header("Location: ../../home.php?login='$usuario'" );    //Esto hace que se vuelva a la página inicial.
                     die;
                 }
             }else{
-
                 $_SESSION['usuario'] = 0;
                 session_destroy();
                 // Inicio de sesión fallido
