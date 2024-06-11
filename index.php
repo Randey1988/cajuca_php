@@ -47,6 +47,8 @@ if (isset($_SESSION['usuario'])){
                                             echo '<div class="alert alert-warning alert-dismissible"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>Usuario o contraseña inválida.</div>';
                                         }elseif ($_GET['error'] == 'datos_invalidos'){
                                             echo '<div class="alert alert-danger alert-dismissible"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>Datos inválidos.</div>';
+                                        }elseif ($_GET['error'] == 'usuario_no_logado'){
+                                            echo '<div class="alert alert-danger alert-dismissible"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>Usuario no logado de forma correcta.</div>';
                                         }
                                         echo '</div>';
                                     }
