@@ -1,0 +1,74 @@
+nav.nav_color {
+    background-color: #bedef5;
+}
+div.foot_color {
+    background-color: #d3e0e9;
+    bottom: 0px;
+}
+body{
+	margin: auto;
+    padding-top: 100px;
+}
+
+.nav-filling > .nav-link,
+.nav-filling .nav-item {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 0 10px 0 10px;
+}
+
+i{
+    vertical-align: middle;
+}
+
+.scrollup{
+    width:40px;
+    height:40px;
+    opacity:0.3;
+    position:fixed;
+    bottom:50px;
+    right:100px;
+    display:none;
+    text-indent:-9999px;
+    background: url('../media/img/icon_top.png') no-repeat;
+}
+
+.tiny{
+    font-size: 10px;
+    vertical-align: middle;
+}
+
+.small{
+    font-size: 20px;
+    vertical-align: middle;
+} 
+
+.medium{
+    font-size: 40px;
+    vertical-align: middle;
+} 
+
+.large{
+    font-size: 55px;
+    vertical-align: middle;
+}
+
+.izq{
+    float: left;
+}
+.der{
+    float: right;
+}
+
+input[required]+label:after {
+    content: ' *';
+    color: red;
+}
+textarea[required]+label:after {
+    content: ' *';
+    color: red;
+}
+select[required]+label:after {
+    content: ' *';
+    color: red;
+}

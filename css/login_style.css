@@ -1,0 +1,70 @@
+.divider:after,
+.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+.h-custom {
+    height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+    .h-custom {
+        height: 100%;
+    }
+}
+
+nav.nav_color {
+    background-color: #bedef5;
+}
+div.foot_color {
+    background-color: #bedef5;
+    position: bottom;
+}
+
+body{
+	margin: auto;
+}
+
+.nav-filling > .nav-link,
+.nav-filling .nav-item {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 0 10px 0 10px;
+}
+
+i{
+    vertical-align: middle;
+}
+
+.scrollup{
+    width:40px;
+    height:40px;
+    opacity:0.3;
+    position:fixed;
+    bottom:50px;
+    right:100px;
+    display:none;
+    text-indent:-9999px;
+    background: url('../media/img/icon_top.png') no-repeat;
+}
+
+.tiny{
+    font-size: 10px;
+    vertical-align: middle;
+}
+
+.small{
+    font-size: 20px;
+    vertical-align: middle;
+} 
+
+.medium{
+    font-size: 40px;
+    vertical-align: middle;
+} 
+
+.large{
+    font-size: 55px;
+    vertical-align: middle;
+}
