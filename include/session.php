@@ -16,7 +16,7 @@ if (isset($_SESSION['usuario'])){
         $usuario_completo = mysqli_fetch_assoc($db_usuarios);
     
         if ($usuario_completo['estado'] == 6){      //Verfificar si el usuario esta deshabilitado
-            header("Location: /www/cajuca/php/login/logout.php?error=usuario_deshabilitado"); //Redirige a logout
+            header("Location: /php/login/logout.php?error=usuario_deshabilitado"); //Redirige a logout
             die;
         }else{
             $_SESSION ['permisos'] = $usuario_completo['permisos'];
@@ -26,7 +26,7 @@ if (isset($_SESSION['usuario'])){
 }
 
 if($error_login == false){
-    header("Location: /www/cajuca/php/login/logout.php?error=usuario_inexistente"); //Redirige a logout
+    header("Location: /php/login/logout.php?error=usuario_inexistente"); //Redirige a logout
     die;
 }
 
