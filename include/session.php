@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include_once ("include/conexion.php");
+include_once ("conexion.php");
 
 // include ("include/conexion.php");
 $error_login = false;
