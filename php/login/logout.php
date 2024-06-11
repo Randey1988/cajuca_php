@@ -25,8 +25,9 @@ session_destroy();
 
 if (isset($_GET['error'])){
     $error = $_GET['error'];
+    $usuario_error = $_GET['usuario'];
     // Enviamos una cabecera HTTP para redirigir al usuario a la página de inicio del sitio web (index.php)
-    header("Location: ../../index.php?error=$error");
+    header("Location: ../../index.php?error=$error&usuario=$usuario_error");
 }else{
     // Enviamos una cabecera HTTP para redirigir al usuario a la página de inicio del sitio web (index.php)
     header('Location: ../../index.php');
