@@ -50,15 +50,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 if ($usuario_completo['estado'] == 2){
                     $_SESSION['inicio'] = "renovar";
-                    
-                    echo '<h2><a href = "logout.php?error=usuario_incorrecto" title="Modificar contraseña">Pinche aquí si no se le redirecciona correctamente</a></h2>';
+                    ?>
+                    <center><h4><a href = "login_edit.php?usuario='.$usuario.'" title="Modificar contraseña">Pinche aquí si no se le redirecciona correctamente</a></h4></center>
+                    <?php
                     header("Location: login_edit.php?usuario=$usuario" );    //Esto hace que se vuelva a la página inicial.
                     die;
                 }else{
                     // Se recopila la información del usuario
                     $_SESSION['inicio'] = true;
-                    
-                    echo '<h2><a href = "../../home.php?login='.$usuario.'" title="Home">LOGIN CORRECTO. Pinche aquí si no se le redirecciona correctamente</a></h2>';
+                    ?>
+                    <center><h4><a href = "../../home.php?login='.$usuario.'" title="Home">LOGIN CORRECTO. Pinche aquí si no se le redirecciona correctamente</a></h4></center>
+                    <?php
                     header("Location: ../../home.php?login='$usuario'" );    //Esto hace que se vuelva a la página inicial.
                     die;
                 }
@@ -66,8 +68,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['usuario'] = 0;
                 session_destroy();
                 // Inicio de sesión fallido
-                // echo "<h2>Error: Usuario o contraseña incorrectos</h2>";
-                echo '<h2><a href = "logout.php?error=usuario_incorrecto" title="Index: Error Contraseña">ERROR EN CONTRASEÑA. Pinche aquí si no se le redirecciona correctamente</a></h2>';
+                ?>
+                <center><h4><a href = "logout.php?error=usuario_incorrecto" title="Index: Error Contraseña">ERROR EN CONTRASEÑA. Pinche aquí si no se le redirecciona correctamente</a></h4></center>
+                <?php
                 header("Location: logout.php?error=usuario_incorrecto");
                 die;
             }
