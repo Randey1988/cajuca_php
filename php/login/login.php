@@ -1,4 +1,3 @@
-<!-- https://localhost/www/asir05.test/ACTIV10_CARRITO_COMPRAS/INCLUDES/login.php -->
 <?php
 // Iniciamos o reanudamos la sesión actual
 session_start();
