@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+include_once ("include/conexion.php");
+
 // include ("include/conexion.php");
 $error_login = false;
 
@@ -12,6 +15,8 @@ if (isset($_SESSION['usuario'])){
 
     // Verificar si se encontraron resultados
     if (mysqli_num_rows($db_usuarios) == 0) {
+        header("Location: /php/login/logout.php?error=usuario_inexistente"); //Redirige a logout
+        die;
     }else{
         $usuario_completo = mysqli_fetch_assoc($db_usuarios);
     
@@ -23,11 +28,11 @@ if (isset($_SESSION['usuario'])){
             $error_login = true;
         }
     }
-}
+    
+}else{
 
-//if($error_login == false){
-//    header("Location: /php/login/logout.php?error=usuario_inexistente"); //Redirige a logout
-//    die;
+    header("Location: /php/login/logout.php?error=usuario_no_logado"); //Redirige a logout
+    die;
 }
 
 ?>
