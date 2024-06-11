@@ -3,10 +3,12 @@
 session_start();
 include_once ("include/conexion.php");
 
-if (isset($_SESSION['usuario'])){}else{
-    $_SESSION['usuario'] = "cajuca_user";
+if (isset($_SESSION['usuario'])){
+}elseif(isset($_GET['login']))
+	$_SESSION['usuario'] = $_GET['login'];
+}else{
+	$_SESSION['usuario'] = "cajuca_user";
 }
-
 include_once ("include/session.php");
 ?>
 
