@@ -51,12 +51,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($usuario_completo['estado'] == 2){
                     $_SESSION['inicio'] = "renovar";
                     header("Location: login_edit.php?usuario=$usuario" );    //Esto hace que se vuelva a la página inicial.
+                    echo '<h2><a href = "logout.php?error=usuario_incorrecto" title="Modificar contraseña">Pinche aquí si no se le redirecciona correctamente</a></h2>';
                     exit;
                 }else{
                     // Se recopila la información del usuario
                     $_SESSION['inicio'] = true;
                     // echo "<script>alert('Sesión iniciada correctamente');</script>";
                     header("Location: ../../home.php" );    //Esto hace que se vuelva a la página inicial.
+                    echo '<h2><a href = "../../home.php" title="Home">LOGIN CORRECTO. Pinche aquí si no se le redirecciona correctamente</a></h2>';
                     exit;
                 }
             }else{
@@ -66,6 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Inicio de sesión fallido
                 // echo "<h2>Error: Usuario o contraseña incorrectos</h2>";
                 header("Location: logout.php?error=usuario_incorrecto");
+                echo '<h2><a href = "logout.php?error=usuario_incorrecto" title="Index: Error Contraseña">ERROR EN CONTRASEÑA. Pinche aquí si no se le redirecciona correctamente</a></h2>';
                 die;
             }
         }
