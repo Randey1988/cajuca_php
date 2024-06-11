@@ -51,16 +51,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 if ($usuario_completo['estado'] == 2){
                     $_SESSION['inicio'] = "renovar";
-                    header("Location: login_edit.php?usuario=$usuario" );    //Esto hace que se vuelva a la página inicial.
+                    
                     echo '<h2><a href = "logout.php?error=usuario_incorrecto" title="Modificar contraseña">Pinche aquí si no se le redirecciona correctamente</a></h2>';
-                    exit;
+                    header("Location: login_edit.php?usuario=$usuario" );    //Esto hace que se vuelva a la página inicial.
+                    die;
                 }else{
                     // Se recopila la información del usuario
                     $_SESSION['inicio'] = true;
-                    // echo "<script>alert('Sesión iniciada correctamente');</script>";
-                    header("Location: ../../home.php" );    //Esto hace que se vuelva a la página inicial.
+                    
                     echo '<h2><a href = "../../home.php" title="Home">LOGIN CORRECTO. Pinche aquí si no se le redirecciona correctamente</a></h2>';
-                    exit;
+                    header("Location: ../../home.php" );    //Esto hace que se vuelva a la página inicial.
+                    die;
                 }
             }else{
 
@@ -68,8 +69,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 session_destroy();
                 // Inicio de sesión fallido
                 // echo "<h2>Error: Usuario o contraseña incorrectos</h2>";
-                header("Location: logout.php?error=usuario_incorrecto");
                 echo '<h2><a href = "logout.php?error=usuario_incorrecto" title="Index: Error Contraseña">ERROR EN CONTRASEÑA. Pinche aquí si no se le redirecciona correctamente</a></h2>';
+                header("Location: logout.php?error=usuario_incorrecto");
                 die;
             }
         }
@@ -80,11 +81,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }else {
     echo "<p>No se recibieron datos de POST.</p>";
+    echo '<br><br>';
+    echo '<h3><a href = "../../index.php" title="Volver a Inicio"></a></h3>';
 }
 
 // Se añade un enlace al index por si sale un mensaje de error.
-echo '<br><br>';
-echo '<h3><a href = "../../index.php" title="Volver a Inicio"></a></h3>';
 echo '</body>';
 echo '</html>';
 
