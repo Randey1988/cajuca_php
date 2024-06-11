@@ -37,9 +37,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }else{
             $usuario_completo = mysqli_fetch_assoc($sql);
             $contrasena_hash_almacenado = $usuario_completo['contrasena'];
-            var_dump($contrasena_hash_almacenado);
+            if ($usuario == "cajuca_temp"){
+                $contrasena_hash_almacenado = password_hash($contrasena_hash_almacenado, PASSWORD_DEFAULT);
+            }
             $contrasena_hash = password_hash($contrasena, PASSWORD_DEFAULT);
-            var_dump($contrasena_hash);
 
             // Se verifica si el hash de la contraseña introducida coincide con el hash almacenado
             if (password_verify($contrasena, $contrasena_hash_almacenado)) {
