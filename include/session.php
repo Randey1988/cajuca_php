@@ -25,9 +25,9 @@ if (isset($_SESSION['usuario'])){
     }
 }
 
-if($error_login == false){
-    header("Location: /php/login/logout.php?error=usuario_inexistente"); //Redirige a logout
-    die;
+//if($error_login == false){
+//    header("Location: /php/login/logout.php?error=usuario_inexistente"); //Redirige a logout
+//    die;
 }
 
 ?>
