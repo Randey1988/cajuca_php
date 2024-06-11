@@ -4,7 +4,7 @@ session_start();
 include_once ("include/conexion.php");
 
 if (isset($_SESSION['usuario'])){}else{
-    $_SESSION['usuario'] = "cajuca_admin";
+    $_SESSION['usuario'] = "cajuca_temp";
 }
 
 include_once ("include/session.php");
