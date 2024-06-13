@@ -36,8 +36,8 @@
 				$row = mysqli_fetch_assoc($db_query);
 			}
             ?>
-            <h2>Datos de los usuarios &raquo; Editar datos de <?php echo $row['usuario'].' - Codigo '.$row['codigo']; ?></h2>
-			<hr>
+            <h2>Datos de los usuarios &raquo; Editar datos del usuario</h2>
+			<br>
             <!--  var_dump($_POST["contrasena_check"]); ?> -->
 			<?php
             // cargar para insertar los datos nuevos de
@@ -109,6 +109,19 @@
 			?>
             <!-- Formulario -->
 			<form class="form-horizontal" action="" method="post">
+			
+                <!-- Acción -->
+                <div class="row justify-content-between">
+                    <div class= "form-group col-9"><h3>Usuario con código <?php echo $row['codigo'].': '.$row['usuario']; ?></h3></div>
+                 <!-- Botones de accion -->
+                    <div class="form-group col-3 der">
+                        <input type="submit" name="save" class="btn btn-sm btn-success" value="Actualizar datos">
+                        <a href="../login/login_list.php" class="btn btn-sm btn-danger">Regresar</a>
+                    </div>
+                </div>
+                <br>
+                <hr>
+            
                 <div class="row g-2 align-items-center">
                     <div class="form-floating col-md-3">
                         <select id="input_estado" name="estado" class="form-select" aria-label="Seleccionar estado" required
@@ -199,15 +212,6 @@
 					<label for="input_observaciones" class="control-label">Observaciones</label>
                     <div id="tit_otros_help" class="form-text">Se pueden introducir cualquier observación que se considere util.</div>
 				</div>			
-
-                <!-- Botones de accion -->
-				<div class="form-group">
-					<label class="col-sm-3 control-label">&nbsp;</label>
-					<div class="col-sm-6">
-						<input type="submit" name="save" class="btn btn-sm btn-primary" value="Guardar datos">
-						<a href="../login/login_list.php" class="btn btn-sm btn-danger">Cancelar</a>
-					</div>
-				</div>
 			</form>
 		</div>
     </div>

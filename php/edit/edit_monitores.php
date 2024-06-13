@@ -64,8 +64,11 @@
                 $telefono		  = mysqli_real_escape_string($conexion,(strip_tags($_POST["telefono"],ENT_QUOTES)));//Escanpando caracteres 
                 $nsegsocial		  = mysqli_real_escape_string($conexion,(strip_tags($_POST["nsegsocial"],ENT_QUOTES)));//Escanpando caracteres 
                 $cuenta		      = mysqli_real_escape_string($conexion,(strip_tags($_POST["cuenta"],ENT_QUOTES)));//Escanpando caracteres 
-				if(isset($_POST['tit_monitor'])){$tit_monitor=true;}else{$tit_monitor=false;}
-				if(isset($_POST['tit_coordinador'])){$tit_coordinador=true;}else{$tit_coordinador=false;}
+				$tit_monitor	  = mysqli_real_escape_string($conexion,(strip_tags($_POST["tit_monitor"],ENT_QUOTES)));//Escanpando caracteres
+                $tit_coordinador  = mysqli_real_escape_string($conexion,(strip_tags($_POST["tit_coordinador"],ENT_QUOTES)));//Escanpando caracteres 
+				
+				// if(isset($_POST['tit_monitor'])){$tit_monitor=true;}else{$tit_monitor=false;}
+				// if(isset($_POST['tit_coordinador'])){$tit_coordinador=true;}else{$tit_coordinador=false;}
                 // $tit_coordinador  = mysqli_real_escape_string($conexion,(strip_tags($_POST["tit_coordinador"],ENT_QUOTES)));//Escanpando caracteres 
                 $tit_otros		  = mysqli_real_escape_string($conexion,(strip_tags($_POST["tit_otros"],ENT_QUOTES)));//Escanpando caracteres  
 				$observaciones	  = mysqli_real_escape_string($conexion,(strip_tags($_POST["observaciones"],ENT_QUOTES)));//Escanpando caracteres 
